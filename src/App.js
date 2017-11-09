@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import Home from './routes/Home';
 import About from './routes/About';
 import Portal from './routes/Portal';
-// import Test from './routes/Test';
+import Test from './routes/Test';
 
 // import Header from './components/Header';
 // import NoMatch from './components/NoMatch';
@@ -21,6 +21,7 @@ ReactDOM.render(
             <Route exact path='/' component={ Home }/>
             <Route exact path='/about' component={ About }/>
             <Route exact path='/portal' component={ Portal }/>
+            <Route exact path='/test' component={ Test }/>
 
             {/* <Redirect to='/' /> */}
           </Switch>
