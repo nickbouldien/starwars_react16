@@ -15,6 +15,14 @@ const About = () => (
       (I'll be sure to donate some money to their project when I get a job...)
     </p>
 
+    <div>
+      Sources:
+      https://reactjs.org/docs/portals.html
+      https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202
+
+      
+    </div>
+
   </div>
 );
 

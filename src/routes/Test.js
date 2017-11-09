@@ -5,12 +5,42 @@ class Test extends Component {
   constructor() {
     super()
     this.state = {
-      searchTerm: 'people/1/',
-      wookieVersion: true
+      wookieFormat: false,
+      data: null
     }
+    this.onWookieeVersionClick = this.onWookieeVersionClick.bind(this);
   }
 
+  // componentDidMount() {
+  //   console.log('Did component mount ?');
+  //   axios.get('https://api.icndb.com/jokes/random')
+  //     .then((res) => {
+  //       console.log(res.data.value.joke);
+  //       this.setState({data:res.data.value.joke});
+  //     })
+  // }
   componentDidMount() {
+    // hardcoding max/min for now (future allow user to change (w/ slider?) ?) nb???
+    const max = 10;
+    const min = 1;
+    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    // console.log(randomNum);
+
+    let query = `people/${randomNum}/`;
+    if (this.state.wookieFormat) {
+      query = query + "?format=wookiee";
+    }
+    console.log('queryString is: ', query);
+
+    axios.get(`https://swapi.co/api/${query}`)
+    .then((res) => {
+      console.log(res.data);
+      this.setState({data:res.data});
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+
     // try {
     //   const results = await axios.get(`https://swapi.co/api/${this.state.searchTerm}`)
     //   console.log('The fetch Results are: ', results);
@@ -18,27 +48,40 @@ class Test extends Component {
     //   console.error("Error fetching: ", err);
     // }
 
-    axios.get(`https://swapi.co/api/${this.state.searchTerm}`)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-
-
-
     // https://medium.com/front-end-hacking/async-await-with-react-lifecycle-methods-802e7760d802
   }
 
+  onWookieeVersionClick() {
+    // TODO: fix this
+    const currSetting = this.state.wookieFormat;
+    this.setState({
+      wookieFormat: !currSetting
+    });
+    console.log('button clicked', this.state.wookieFormat);
+  }
+
+
   render() {
+    // console.log(this.state);
+    let character = this.state.data && this.state.data.name;
+    if (character && !this.state.wookieFormat) { character = character.toLowerCase().replace(" ", "_"); }
+
     return (
-      <div id="about-div">
-        <h1>About this project:</h1>
-        <ul>Tech used:</ul>
-        <li>React 16</li>
-        <li>Webpack 3+ (fun to setup...)</li>
+      <div id="test-div">
+        <h1>Test: (with characters 1-10)</h1>
+
+        <button onClick={this.onWookieeVersionClick}>Change to Wookiee version</button>
+
+      { this.state.data && (
+        <div>
+          <img src={`${character}.png`} alt={`${character} image`} />
+
+          <h3>Response from swapi:</h3>
+          <pre><code>{JSON.stringify(this.state.data, null, 4)}</code></pre>
+
+        </div>
+      )
+      }
 
       </div>
     )
