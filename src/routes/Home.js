@@ -23,11 +23,13 @@ const Home = () => (
     <br />
     <Link to="test">test route</Link>
     <br />
-
-    <a to="">github repo link</a>
+    <br />
     <br />
 
-    <a to="https://starwars-react16.herokuapp.com/">heroku site</a>
+    <a href="">github repo link</a>
+    <br />
+
+    <a href="https://starwars-react16.herokuapp.com/">heroku site</a>
 
 
   </div>

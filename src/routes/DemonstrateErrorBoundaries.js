@@ -1,6 +1,7 @@
 import React from 'react';
 import ProblemComponent from '../components/ProblemComponent';
 import ErrorBoundary from '../components/ErrorBoundary';
+import OtherComponent from '../components/OtherComponent';
 import BrokenSidebar from '../components/BrokenSidebar';
 
 const DemonstrateErrorBoundaries = () => (
@@ -9,14 +10,19 @@ const DemonstrateErrorBoundaries = () => (
     <hr />
     <ErrorBoundary>
       <p>These two counters are inside the same error boundary. If one crashes, the error boundary will replace both of them.</p>
-      {/* <OtherComponent /> */}
-      <ProblemComponent />
-      <ProblemComponent />
+      <OtherComponent />
+      <ProblemComponent willThrow="no" url="https://swapi.co/api/planets/1" />
+      <ProblemComponent willThrow="yup" url="https://swapi.co/api/pasdfasdfasdf/1314" />
     </ErrorBoundary>
+
     <hr />
+
     <p>These two counters are each inside of their own error boundary. So if one crashes, the other is not affected.</p>
-    <ErrorBoundary><ProblemComponent /></ErrorBoundary>
-    <ErrorBoundary><ProblemComponent /></ErrorBoundary>
+
+    <p>#3: Below will NOT throw (calls <a href="https://swapi.co/api/planets/1">https://swapi.co/api/planets/1</a>)</p>
+    <ErrorBoundary><ProblemComponent willThrow="no" url="https://swapi.co/api/planets/1" /></ErrorBoundary>
+    <p>#4: Below will throw (gets 404 calling <a href="https://swapi.co/api/pasdfasdfasdf/1314">https://swapi.co/api/pasdfasdfasdf/1314</a>), but doesn't affect #3</p>
+    <ErrorBoundary><ProblemComponent willThrow="yup" url="https://swapi.co/api/pasdfasdfasdf/1314" /></ErrorBoundary>
 
     {/* <BrokenSidebar /> */}
 
