@@ -11,13 +11,9 @@ class ReturnArray extends Component {
       error: null,
       fetching: true
     }
-    this.onCallSwapi = this.onCallSwapi.bind(this);
-    this.onCallSwapi();
   }
 
-  // make it componentDidMount, dummy
-  onCallSwapi() {
-
+  componentDidMount() {
     const apiCalls = [];
 
     for (let i = 1; i < 5; i++) {  // swapi starts at 1 (Luke), so just go with that
@@ -26,7 +22,7 @@ class ReturnArray extends Component {
 
     axios.all(apiCalls)
       .then((results) => {
-        console.log('call results: ', results);
+        // console.log('call results: ', results);
         const data = results.map(res => res.data);
         this.setState({
           data,
@@ -46,23 +42,21 @@ class ReturnArray extends Component {
 
     if (error) { console.error(error); }
 
-      console.log(data, error);
-      return (
+      return (  // need to make easier to read...
         data && data.map((character, ind) => {
         return (
           <div key={ind}>  {/* don't forget the key!!! it will yell at you */}
             <ul>
-              <li>Name: {character.name}</li>
-              <li>Height: {character.height}, Mass: {character.mass}</li>
+              <li>{character.name}</li>
+              <li>Height: {character.height},  Mass: {character.mass}</li>
               <li>Birth year: {character.birth_year}</li>
-              {/* <li>Species: <a href={`${}`}></a>{character.species}</li> */}
+              <li>Swapi Link to Home World: <a href={`${character.homeworld}`}>{character.homeworld}</a></li>
             </ul>
             {/* <img   /> */}
           </div>
         );
       }) || <Spinner1 />
     )
-
 
   }
 }

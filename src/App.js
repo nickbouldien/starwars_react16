@@ -6,6 +6,8 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Portal from './routes/Portal';
 import ReturnArray from './routes/ReturnArray';
+import DemonstrateErrorBoundaries from './routes/DemonstrateErrorBoundaries';
+import CustomAttributes from './routes/CustomAttributes';
 
 import Test from './routes/Test';
 
@@ -24,11 +26,13 @@ ReactDOM.render(
             <Route exact path='/about' component={ About }/>
             <Route exact path='/portal' component={ Portal }/>
             <Route exact path='/return-array' component={ ReturnArray }/>
+            <Route exact path='/error-boundary' component={ DemonstrateErrorBoundaries }/>
+            <Route exact path='/custom-attributes' component={ CustomAttributes }/>
 
 
             <Route exact path='/test' component={ Test }/>
 
-            {/* <Redirect to='/' /> */}
+            <Redirect to='/' />
           </Switch>
       </div>
     </BrowserRouter>
