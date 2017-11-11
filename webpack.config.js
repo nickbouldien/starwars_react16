@@ -3,19 +3,19 @@ const webpack = require('webpack');
 
 const config = {
   context: __dirname,
-  entry: ['./src/App.js'],
+  entry: ['./src/index.js'],
   // entry: path.resolve(__dirname, 'src', 'index.js'),
   // https://webpack.js.org/configuration/devtool/#development
   devtool: process.env.NODE_ENV === 'development' ? 'cheap-eval-source-map' : false,
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/public/'
+    publicPath: '/'
   },
   devServer: {
     hot: true,
     // contentBase: './src',
-    publicPath: 'http://localhost:9000/public/',
+    publicPath: 'http://localhost:9000/',
     historyApiFallback: true,
     port: 9000
   },
