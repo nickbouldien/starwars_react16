@@ -6,6 +6,7 @@ import BrokenSidebar from '../components/BrokenSidebar';
 
 const DemonstrateErrorBoundaries = () => (
   <div>
+    <h1>Error Boundary examples: (open up console)</h1>
     {/* Declarative version of try/catch */}
     <hr />
     <ErrorBoundary>

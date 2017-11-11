@@ -5,7 +5,6 @@ class ProblematicComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0,
       res: null,
       error: false
     };
@@ -13,10 +12,6 @@ class ProblematicComponent extends Component {
   }
 
   handleClick() {
-    this.setState(({counter}) => ({
-      counter: counter + 1
-    }));
-
     axios.get(this.props.url)
       .then((results) => {
         console.log('call results: ', results);
