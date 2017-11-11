@@ -11,12 +11,14 @@
   },
   "scripts": {
     "build": "NODE_ENV=production webpack -p",
-    "build:client": "cross-env NODE_ENV=production webpack --env.prod",
-    "dev": "NODE_ENV=development webpack-dev-server --env.dev",
-    "heroku-postbuild": "NODE_ENV=production webpack -p",
+    "build:dev": "webpack -d",
+    "dev": "npm-run-all --parallel dev:*",
+    "watch": "NODE_ENV=development webpack --watch",
     "start": "cross-env NODE_ENV=production node tmp/lib/server",
-    "test": "",
-    "watch": "NODE_ENV=development webpack --watch"
+    "build:client": "cross-env NODE_ENV=production webpack --env.prod",
+    "dev:client": "NODE_ENV=development webpack-dev-server --env.dev",
+    "heroku-postbuild": "NODE_ENV=production webpack -p",
+    "test": ""
   },
   "dependencies": {
     "axios": "^0.16.1",

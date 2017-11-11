@@ -17,28 +17,28 @@ import Test from './routes/Test';
 import './styles.css';
 
 
-ReactDOM.render(
-    <BrowserRouter>
-      <div className='container'>
-        {/* <Header/> */}
-          <Switch>
-            <Route exact path='/' component={ Home }/>
-            <Route exact path='/about' component={ About }/>
-            <Route exact path='/portal' component={ Portal }/>
-            <Route exact path='/return-array' component={ ReturnArray }/>
-            <Route exact path='/error-boundary' component={ DemonstrateErrorBoundaries }/>
-            <Route exact path='/custom-attributes' component={ CustomAttributes }/>
+const App = () => (
+  <BrowserRouter>
+    <div className='container'>
+      {/* <Header/> */}
+      <Switch>
+        <Route exact path='/' component={ Home }/>
+        <Route exact path='/about' component={ About }/>
+        <Route exact path='/portal' component={ Portal }/>
+        <Route exact path='/return-array' component={ ReturnArray }/>
+        <Route exact path='/error-boundary' component={ DemonstrateErrorBoundaries }/>
+        <Route exact path='/custom-attributes' component={ CustomAttributes }/>
 
 
-            <Route exact path='/test' component={ Test }/>
+        <Route exact path='/test' component={ Test }/>
 
-            <Redirect to='/' />
-          </Switch>
-      </div>
-    </BrowserRouter>
-  , document.getElementById('root'));
+        <Redirect to='/' />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
 
-
+export default App;
 // if (module.hot) {
 //    module.hot.accept('./print.js', function() {
 //      console.log('Accepting the updated printMe module!');
