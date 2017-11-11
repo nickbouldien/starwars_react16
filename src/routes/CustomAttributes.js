@@ -13,7 +13,7 @@ const CustomAttributes = () => (
 
     <Link to="/">home</Link>
 
-    <h2>Inspect the elements to see the custom attributes on the divs</h2>
+    <h2>Inspect the elements with the browser dev tools to see the custom attributes on the divs</h2>
 
     <div jarjarbinks="dumb"><pre><code>jarjarbinks="dumb"</code></pre></div>
 
@@ -27,7 +27,7 @@ const CustomAttributes = () => (
     <div theDeathStar='[Object object]'><pre><code>theDeathStar='[Object object]'</code></pre></div>
 
 
-
+    {/*  put image of the results from the console */}
     <img src="" alt="" />
 
   </div>
