@@ -1,23 +1,24 @@
 const path = require('path');
 const webpack = require('webpack');
+// const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
 
 const config = {
-  context: __dirname,
-  entry: ['./src/index.js'],
-  // entry: path.resolve(__dirname, 'src', 'index.js'),
+  // context: __dirname,
+  // entry: ['./src/index.js'],
+  entry: path.resolve(__dirname, 'src', 'index.js'),
   // https://webpack.js.org/configuration/devtool/#development
   devtool: process.env.NODE_ENV === 'development' ? 'cheap-eval-source-map' : false,
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/public/'  // https://webpack.js.org/guides/public-path/
   },
   devServer: {
     hot: true,
-    // contentBase: './src',
-    publicPath: 'http://localhost:9000/',
+    contentBase: './public',
+    publicPath: 'http://localhost:3000/',
     historyApiFallback: true,
-    port: 9000
+    port: 3000
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
@@ -31,13 +32,21 @@ const config = {
     // https://webpack.js.org/guides/hot-module-replacement/
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin()
+    // new HtmlWebpackPlugin({ template: './public/index.html' })
+
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     'NODE_ENV': JSON.stringify('production')
+    //   }
+    // })
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        // use: 'babel-loader',
         exclude: /node_modules/,
+        loader: 'babel-loader',  // https://github.com/babel/babel-loader
         // include: path.resolve(__dirname, './src'),
         query: {
           presets: ['es2015']
@@ -46,7 +55,10 @@ const config = {
       {
        test: /\.css$/,                                     //    /\.scss/
        use: ['style-loader', 'css-loader']                 // , 'sass-loader'
-     },
+     }
+    //  { test: /\.png$/,
+    //    loader: 'file'
+    //  },
       // {
       //   test: /\.jsx?$/,
       //   loader: 'babel-loader',
@@ -56,6 +68,11 @@ const config = {
   }
 };
 
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+} else {
+  console.info('Running in production');
+}
   // if (process.env.NODE_ENV === 'development') {
   //   config.entry.unshift('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000');
   // }
