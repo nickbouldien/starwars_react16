@@ -11,7 +11,7 @@ const DemonstrateErrorBoundaries = () => (
     <hr />
     <ErrorBoundary>
       <p>These two counters are inside the same error boundary. If one crashes, the error boundary will replace both of them.</p>
-      <OtherComponent />
+      <OtherComponent willThrow="no" />
       <ProblemComponent willThrow="no" url="https://swapi.co/api/planets/1" />
       <ProblemComponent willThrow="yup" url="https://swapi.co/api/pasdfasdfasdf/1314" />
     </ErrorBoundary>

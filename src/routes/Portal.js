@@ -10,7 +10,7 @@ class Portal extends PureComponent {
     this.state = {
       counter: 0,
       showChewiePortal: false,
-      showPortal2: false
+      showDarthVaderPortal: false
     };
 
     this.toggleWindowPortal = this.toggleWindowPortal.bind(this);
@@ -38,14 +38,14 @@ class Portal extends PureComponent {
     console.log('clicked other');
     this.setState(state => ({
       ...state,
-      showPortal2: !state.showPortal2,
+      showDarthVaderPortal: !state.showDarthVaderPortal,
     }));
   }
 
   render() {
     return (
       <div>
-        <h1>Portal (Darth Vader/Chewie)</h1>
+        <h2>Portal (Darth Vader/Chewie)</h2>
 
         {/* <h1>Counter: {this.state.counter}</h1> */}
 
@@ -54,7 +54,7 @@ class Portal extends PureComponent {
         </button>
 
         <button onClick={this.toggleOtherPortal}>
-          {this.state.showPortal2 ? 'Close the' : 'Open the'} Vader Portal
+          {this.state.showDarthVaderPortal ? 'Close the' : 'Open the'} Vader Portal
         </button>
 
         {this.state.showChewiePortal && (
@@ -69,13 +69,13 @@ class Portal extends PureComponent {
           </PortalComponent>
         )}
 
-        {this.state.showPortal2 && (
+        {this.state.showDarthVaderPortal && (
           <PortalComponent>
             <h3>Darth Vader portal</h3>
             {/* image/video */}
 
 
-            <button onClick={() => this.setState({ showPortal2: false })} >
+            <button onClick={() => this.setState({ showDarthVaderPortal: false })} >
               Stop fighting
             </button>
           </PortalComponent>

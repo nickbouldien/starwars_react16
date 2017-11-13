@@ -7,7 +7,7 @@ const Home = () => (
     <div>This is just a small "project" to explore some of the new features of React 16,
        with a star wars theme, of course
     </div>
-    <p>Open to suggestions/help (with coding style, and especially with styling)</p>
+    <p>Open to suggestions/help (with React 16 features to add, suggestions, and especially help with styling)</p>
 
     <h3>Links to the routes:</h3>
 

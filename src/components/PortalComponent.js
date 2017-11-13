@@ -13,14 +13,11 @@ class PortalComponent extends PureComponent {
 
   render() {
     console.log('props in the PortalComponent', this.props, this.props.children);
-    // STEP 2: append props.children to the container <div> that isn't mounted anywhere yet
     return ReactDOM.createPortal(this.props.children, this.containerDiv1);
   }
   componentDidMount() {
-    // STEP 3: open a new browser window and store a reference to it
     this.externalWindow = window.open('', '', 'width=600,height=400,left=200,top=200');
 
-    // STEP 4: append the container <div> (that has props.children appended to it) to the body of the new window
     this.externalWindow.document.body.appendChild(this.containerDiv1);
   }
 

@@ -1,7 +1,9 @@
 import React from 'react';
+import StyledHeader from '../components/Header';
 
 const About = () => (
   <div id="about-div">
+    <StyledHeader />
     <h1>About this project:</h1>
     <ul>Tech used:</ul>
     <li>React 16</li>
@@ -20,7 +22,7 @@ const About = () => (
       https://reactjs.org/docs/portals.html
       https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202
 
-      
+
     </div>
 
   </div>
