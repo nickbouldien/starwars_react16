@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div id="home-div">
-    <h1>Welcome, young <a href="http://starwars.wikia.com/wiki/Padawan">padawans</a></h1>
+    <h1>Welcome, young <a href="http://starwars.wikia.com/wiki/Padawan" target="_blank">padawans</a></h1>
     <div>
       <h3>This is just a small "project" to explore some of the new features of React 16,
        with a star wars theme, of course

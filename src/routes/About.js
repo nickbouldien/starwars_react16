@@ -23,6 +23,7 @@ const About = () => (
         use eslint
         use flow
         better styling
+        implement wookie version
 
     </div>
 
