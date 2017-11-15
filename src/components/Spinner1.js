@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import spinnerImage from "../../public/images/load2.png";
 
 const spin = keyframes`
   from {
@@ -16,6 +17,6 @@ const Image = styled.img`
   height: auto;
 `;
 
-const Spinner1 = () => <Image src="../public/images/load2.png" alt="loading indicator" />;
+const Spinner1 = () => <Image src={spinnerImage} alt="loading indicator" />;
 
 export default Spinner1;

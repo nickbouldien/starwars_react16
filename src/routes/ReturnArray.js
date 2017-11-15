@@ -41,8 +41,8 @@ class ReturnArray extends Component {
     let { data, error } = this.state;
 
     if (error) { console.error(error); }
-
-    return data && data.map((character, ind) => <CharacterListItem character={character} index={ind} key={ind} /> )
+    // would use something other than the index for the key below if there was a better option
+    return data && data.map((character, ind) => <CharacterListItem character={character} key={ind} /> )
       || <Spinner1 />
 
   }

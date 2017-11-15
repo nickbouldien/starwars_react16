@@ -6,7 +6,8 @@ class Test extends Component {
     super()
     this.state = {
       wookieFormat: false,
-      data: null
+      data: null,
+      randomNum: null
     }
     this.onWookieeVersionClick = this.onWookieeVersionClick.bind(this);
   }
@@ -35,7 +36,7 @@ class Test extends Component {
     axios.get(`https://swapi.co/api/${query}`)
     .then((res) => {
       console.log(res.data);
-      this.setState({data:res.data});
+      this.setState({ data: res.data, randomNum });
     })
     .catch(function (error) {
       console.error(error);
@@ -62,7 +63,6 @@ class Test extends Component {
 
 
   render() {
-    // console.log(this.state);
     let character = this.state.data && this.state.data.name;
     if (character && !this.state.wookieFormat) { character = character.toLowerCase().replace(" ", "_"); }
 
@@ -76,7 +76,7 @@ class Test extends Component {
         <div>
           <img src={`${character}.png`} alt={`${character} image`} />
 
-          <h3>Response from swapi:</h3>
+          <h3>Response from swapi for character {this.state.randomNum}:</h3>
           <pre><code>{JSON.stringify(this.state.data, null, 4)}</code></pre>
 
         </div>

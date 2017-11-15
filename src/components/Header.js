@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 const Header = () => (
-  <ul>
-    <li><Link to="/">Home</Link></li>
-  </ul>
+  <Navbar inverse>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <Link to="/">StarWars_React16</Link>
+      </Navbar.Brand>
+    </Navbar.Header>
+    <Nav pullRight>
+      <NavItem eventKey={1} href="/about">About</NavItem>
+      <NavItem eventKey={2} href="#">GitHub</NavItem>
+    </Nav>
+  </Navbar>
 );
 
-const StyledHeader = styled(Header)`
-	color: palevioletred;
-  background-color: blue;
-  list-style: none;
-  font-style: none;
-	font-weight: bold;
-`;
-
-export default StyledHeader;
+export default Header;

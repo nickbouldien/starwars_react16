@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 const Home = () => (
   <div id="home-div">
     <h1>Welcome, young <a href="http://starwars.wikia.com/wiki/Padawan">padawans</a></h1>
-    <div>This is just a small "project" to explore some of the new features of React 16,
+    <div>
+      <h3>This is just a small "project" to explore some of the new features of React 16,
        with a star wars theme, of course
+     </h3>
+     <p>Open to suggestions/help (which React 16 features to add that I missed, bugs found, overall suggestions/criticisms, and especially help with styling)</p>
     </div>
-    <p>Open to suggestions/help (with React 16 features to add, suggestions, and especially help with styling)</p>
 
     <h3>Links to the routes:</h3>
 

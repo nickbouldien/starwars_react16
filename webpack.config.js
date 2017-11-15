@@ -55,10 +55,15 @@ const config = {
       {
        test: /\.css$/,                                     //    /\.scss/
        use: ['style-loader', 'css-loader']                 // , 'sass-loader'
+     },
+     {
+       test: /\.(jpe?g|png|gif|svg)$/i,
+       loader: "url-loader?name=/public/images/[name].[ext]"
      }
+
     //  { test: /\.png$/,
     //    loader: 'file'
-    //  },
+    //  }
       // {
       //   test: /\.jsx?$/,
       //   loader: 'babel-loader',
@@ -73,8 +78,5 @@ if (process.env.NODE_ENV !== 'production') {
 } else {
   console.info('Running in production');
 }
-  // if (process.env.NODE_ENV === 'development') {
-  //   config.entry.unshift('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000');
-  // }
 
   module.exports = config;
