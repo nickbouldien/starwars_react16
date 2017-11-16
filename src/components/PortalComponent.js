@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 
 // shoutout to David Gilbertson: https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202
+// https://reactjs.org/docs/portals.html
 class PortalComponent extends PureComponent {
   constructor(props) {
     super(props);
@@ -12,7 +13,6 @@ class PortalComponent extends PureComponent {
   }
 
   render() {
-    console.log('props in the PortalComponent', this.props, this.props.children);
     return ReactDOM.createPortal(this.props.children, this.containerDiv1);
   }
   componentDidMount() {

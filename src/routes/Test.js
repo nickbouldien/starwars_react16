@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Image } from 'react-bootstrap';
+import Spinner1 from '../components/Spinner1';
 
 class Test extends Component {
   constructor() {
@@ -39,7 +40,7 @@ class Test extends Component {
 
     if (changeCharacter) {
         randomNum = this.state.randomNum;
-        console.log('state randomNum ', randomNum);
+        // console.log('state randomNum ', randomNum);
     }
 
     let query = `people/${randomNum}/`;
@@ -55,7 +56,7 @@ class Test extends Component {
     .catch(function (error) {
       console.error(error);
     });
-
+    // below is prepping for async/await
     // try {
     //   const results = await axios.get(`https://swapi.co/api/${this.state.searchTerm}`)
     //   console.log('The fetch Results are: ', results);
@@ -92,25 +93,25 @@ class Test extends Component {
 
 
   render() {
-    let character = null; // this.state.data && (this.state.data.name || this.state.data.whrascwo);
+    let character = ""; // this.state.data && (this.state.data.name || this.state.data.whrascwo);
 
     if (this.state.data && this.state.data.name) {
       character = this.state.data.name.toLowerCase().replace(" ", "_");
     } else if (this.state.data && this.state.data.whrascwo) {
-      console.log('character before: ', this.state.data.whrascwo);
+      // console.log('character before: ', this.state.data.whrascwo);
       character = this.mapWookieVersion(this.state.data.whrascwo);
-      console.log('character now ', character);
+      // console.log('character now ', character);
     }
 
     return (
       <div id="test-div">
-        <h1>Test: (with characters 1-10)</h1>
+        <h1>Test: (with characters 1-4)</h1>
 
         <button onClick={this.refresh}>Call Swapi again</button>
 
         <button onClick={this.onWookieeVersionClick}>Change to Wookiee version</button>
 
-      { this.state.data && (
+      { this.state.data && character && (
         <div>
           <Image src={`/images/${character}.png`} responsive thumbnail alt={`Image for ${character}`} />
 
@@ -118,7 +119,7 @@ class Test extends Component {
           <pre><code>{JSON.stringify(this.state.data, null, 4)}</code></pre>
 
         </div>
-      )
+      ) || <Spinner1 />
       }
 
       </div>

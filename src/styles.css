@@ -15,11 +15,23 @@ body {
   font-size: 14px;
   font-weight: bold;
   color: rgb(34, 35, 39);
-
 }
 
 .list-group-item a::after {
   text-decoration: none;
   color: black;
+}
 
+/*.home-div a {
+  color: red;
+}*/
+
+#welcome a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#welcome a:hover {
+  text-decoration: underline;
+  color: inherit;
 }

@@ -28,20 +28,27 @@ class Portal extends PureComponent {
   // }
 
   toggleWindowPortal() {
-    this.setState(state => ({
-      ...state,
-      showChewiePortal: !state.showChewiePortal,
-    }));
+    // this.setState(state => ({
+    //   ...state,
+    //   showChewiePortal: !state.showChewiePortal,
+    // }));
+    this.setState({
+      showChewiePortal: !this.state.showChewiePortal
+    });
   }
 
   toggleOtherPortal() {
-    this.setState(state => ({
-      ...state,
-      showDarthVaderPortal: !state.showDarthVaderPortal,
-    }));
+    // this.setState(state => ({
+    //   ...state,
+    //   showDarthVaderPortal: !state.showDarthVaderPortal,
+    // }));
+    this.setState({
+      showDarthVaderPortal: !this.state.showDarthVaderPortal
+    });
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <h2>Portal (Darth Vader/Chewie)</h2>
@@ -74,7 +81,7 @@ class Portal extends PureComponent {
             <Image src={`/images/darth_vader.png`} responsive thumbnail alt={`vader image`} />
 
 
-            <button onClick={() => this.setState({ showDarthVaderPortal: false })} >
+            <button onClick={this.toggleOtherPortal} >
               Stop fighting
             </button>
           </PortalComponent>
