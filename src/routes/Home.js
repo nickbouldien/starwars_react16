@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Image, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const Home = () => (
   <div id="home-div">
@@ -13,25 +14,17 @@ const Home = () => (
 
     <h3>Links to the routes:</h3>
 
-    <Link to="portal">portal</Link>
-    <br />
-    <Link to="return-array">return array</Link>
-    <br />
-    <Link to="error-boundary">error boundary</Link>
-    <br />
-    <Link to="custom-attributes">custom attributes</Link>
-    <br />
-    <Link to="about">about</Link>
-    <br />
-    <Link to="test">test route</Link>
-    <br />
-    <br />
-    <br />
+    <ListGroup>
+      <ListGroupItem><Link to="portal">portal</Link></ListGroupItem>
+      <ListGroupItem><Link to="return-array">return array</Link></ListGroupItem>
+      <ListGroupItem><Link to="error-boundary">error boundary</Link></ListGroupItem>
+      <ListGroupItem><Link to="custom-attributes">custom attributes</Link></ListGroupItem>
+      <ListGroupItem><Link to="about">about</Link></ListGroupItem>
+      <ListGroupItem><Link to="test">test route</Link></ListGroupItem>
 
-    <a href="">github repo link</a>
-    <br />
+    </ListGroup>
 
-    <a href="https://starwars-react16.herokuapp.com/">heroku site</a>
+
 
 
   </div>

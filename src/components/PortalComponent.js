@@ -7,7 +7,7 @@ class PortalComponent extends PureComponent {
     super(props);
     // could also put a div in index.html and get it by id
     this.containerDiv1 = document.createElement('div');
-
+    this.containerDiv1.setAttribute("id", "portal-div");
     this.externalWindow = null;
   }
 
@@ -22,7 +22,12 @@ class PortalComponent extends PureComponent {
   }
 
   componentWillUnmount() {
+    // const yup = this.externalWindow.document.getElementById("portal-div");
+    // console.log('yup is: ', yup);
+    // yup.remove();
+    // modalRoot.removeChild(this.el);
     this.externalWindow.close();
+
   }
 }
 
