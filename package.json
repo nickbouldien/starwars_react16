@@ -2,10 +2,10 @@
   "name": "starwars_react16",
   "version": "0.7.0",
   "description": "react16_app_starwarsApi w/ (https://swapi.co/)",
-  "main": "App.js",
   "author": "nick bouldien",
   "license": "MIT",
   "repository": "",
+  "main": "server.js",
   "engines": {
     "node": "8.1.3"
   },
