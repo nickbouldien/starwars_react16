@@ -26,14 +26,11 @@ class ProblematicComponent extends Component {
           fetching: false
         });
       });
-
-
   }
 
   render() {
     const { res } = this.state;
     console.log('ProblemComponent props', this.state );
-
 
     if (this.state.error) {
       throw new Error('ProblemComponent crashed!');
@@ -45,7 +42,12 @@ class ProblematicComponent extends Component {
         <h3>{res.name}</h3>
         <p>Population: {res.population}</p>
       </div>
-    ) || <h5 onClick={this.handleClick}>click me or UGHRUAWRURHGUGHRUHRA UGHUUGHA (Chewie would understand <a href="https://scratch.mit.edu/projects/63879474/">Translator</a>)</h5>
+    ) || (
+      <div>
+        <h5>click the UHRGUARGUURGUURGUHUUUGUR (button) below (Chewie would understand <a href="https://scratch.mit.edu/projects/63879474/" target="_blank">Translator</a>)</h5>
+        <button onClick={this.handleClick}>UHRGUARGUURGUURGUHUUUGUR</button>
+      </div>
+    )
   }
 }
 

@@ -31,7 +31,7 @@ class ErrorBoundary extends Component {
         <div>
           <h3>Something went wrong (on purpose).</h3>
           <details style={{ whiteSpace: 'pre-wrap' }}>
-            <a href="https://codepen.io/gaearon/pen/wqvxGa?editors=0010">stolen from Dan Abramov's codepen</a>
+            <a href="https://codepen.io/gaearon/pen/wqvxGa?editors=0010" target="_blank" >stolen from Dan Abramov's codepen</a>
             <br />
             {error && error.toString()}
             <br />
@@ -40,6 +40,8 @@ class ErrorBoundary extends Component {
            {/* https://media.giphy.com/media/gOSSh0r3Wf0yY/giphy.gif */}
         </div>
 
+        // curious to see how people use ErrorBoundaries in production (have multiple for different types of errors?
+        // have a switch or something that lets you render the wanted backup UI depending on the error?)
 
       )
     }

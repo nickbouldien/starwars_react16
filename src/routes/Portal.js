@@ -1,83 +1,81 @@
 import React, { PureComponent } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Image, Grid, Row, Col, Button } from 'react-bootstrap';
 import PortalComponent from '../components/PortalComponent';
+import chewieGif from '../../public/images/chewie1.gif';
+import vaderGif from '../../public/images/vaderGif.gif';
 
 class Portal extends PureComponent {
   constructor(props) {
     super(props);
-
     this.state = {
       counter: 0,
       showChewiePortal: false,
-      showPortal2: false
+      showDarthVaderPortal: false
     };
 
-    this.toggleWindowPortal = this.toggleWindowPortal.bind(this);
+    this.toggleChewiePortal = this.toggleChewiePortal.bind(this);
     this.toggleOtherPortal = this.toggleOtherPortal.bind(this);
   }
 
-  componentDidMount() {
-    window.setInterval(() => {
-      this.setState(state => ({
-        ...state,
-        counter: state.counter + 1,
-      }));
-    }, 1000);
-  }
-
-  toggleWindowPortal() {
-    console.log('clicked');
-    this.setState(state => ({
-      ...state,
-      showChewiePortal: !state.showChewiePortal,
-    }));
+  toggleChewiePortal() {
+    this.setState({
+      showChewiePortal: !this.state.showChewiePortal
+    });
   }
 
   toggleOtherPortal() {
-    console.log('clicked other');
-    this.setState(state => ({
-      ...state,
-      showPortal2: !state.showPortal2,
-    }));
+    this.setState({
+      showDarthVaderPortal: !this.state.showDarthVaderPortal
+    });
   }
 
   render() {
     return (
       <div>
-        <h1>Portal (Darth Vader/Chewie)</h1>
+        <h2>Portal (Darth Vader/Chewie)</h2>
 
-        {/* <h1>Counter: {this.state.counter}</h1> */}
-
-        <button onClick={this.toggleWindowPortal}>
-          {this.state.showChewiePortal ? 'Close the' : 'Open the'} Chewie Portal
-        </button>
-
-        <button onClick={this.toggleOtherPortal}>
-          {this.state.showPortal2 ? 'Close the' : 'Open the'} Vader Portal
-        </button>
+        <Grid>
+          <Row className="show-grid">
+            <Col md={6} mdPush={6}>
+              <Button onClick={this.toggleChewiePortal}>
+                {this.state.showChewiePortal ? 'Cease Fire' : 'Open the Chewie Portal'}
+              </Button>
+              <br />
+              <Image src={`/images/chewie.png`} responsive thumbnail alt={`chewie image`} />
+            </Col>
+            <Col md={6} mdPull={6}>
+              <Button onClick={this.toggleOtherPortal}>
+                {this.state.showDarthVaderPortal ? 'Stop fighting' : 'Open the Vader Portal'}
+              </Button>
+              <br />
+              <Image src={`/images/darth_vader.png`} responsive thumbnail alt={`vader image`} />
+            </Col>
+          </Row>
+        </Grid>
 
         {this.state.showChewiePortal && (
           <PortalComponent>
             <h2>Chewie portal</h2>
-            {/* image/video */}
+            <Image src={chewieGif} responsive thumbnail alt={`chewie gif`} />
 
-
-            <button onClick={() => this.setState({ showChewiePortal: false })} >
+            {/* TODO: put buttons inside to close external windows */}
+            {/* <Button onClick={() => this.setState({ showChewiePortal: false })} >
               Cease Fire
-            </button>
+            </Button> */}
           </PortalComponent>
         )}
 
-        {this.state.showPortal2 && (
+        {this.state.showDarthVaderPortal && (
           <PortalComponent>
             <h3>Darth Vader portal</h3>
-            {/* image/video */}
+            <Image src={vaderGif} responsive thumbnail alt={`vader gif`} />
 
-
-            <button onClick={() => this.setState({ showPortal2: false })} >
+            {/* // TODO */}
+            {/* <Button onClick={this.toggleOtherPortal} >
               Stop fighting
-            </button>
+            </Button> */}
           </PortalComponent>
         )}
       </div>

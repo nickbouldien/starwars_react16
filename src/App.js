@@ -11,7 +11,7 @@ import CustomAttributes from './routes/CustomAttributes';
 
 import Test from './routes/Test';
 
-// import Header from './components/Header';
+import Header from './components/Header';
 // import NoMatch from './components/NoMatch';
 
 import './styles.css';
@@ -19,21 +19,22 @@ import './styles.css';
 
 const App = () => (
   <BrowserRouter>
-    <div className='container'>
-      {/* <Header/> */}
+    <div>
+      <Header/>
+      <div className='container'>
       <Switch>
         <Route exact path='/' component={ Home }/>
-        <Route exact path='/about' component={ About }/>
         <Route exact path='/portal' component={ Portal }/>
         <Route exact path='/return-array' component={ ReturnArray }/>
         <Route exact path='/error-boundary' component={ DemonstrateErrorBoundaries }/>
         <Route exact path='/custom-attributes' component={ CustomAttributes }/>
 
-
+        <Route exact path='/about' component={ About }/>
         <Route exact path='/test' component={ Test }/>
 
         <Redirect to='/' />
       </Switch>
+      </div>
     </div>
   </BrowserRouter>
 );
