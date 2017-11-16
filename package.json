@@ -13,8 +13,8 @@
     "build": "NODE_ENV=production webpack -p",
     "build:client": "cross-env NODE_ENV=production webpack --env.prod",
     "dev": "NODE_ENV=development webpack-dev-server --env.dev",
-    "postinstall": "NODE_ENV=production webpack -p",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "heroku-postbuild": "webpack -p --progress",
+    "start": "cross-env NODE_ENV=production node ./src/index.js",
     "test": "",
     "watch": "NODE_ENV=development webpack --watch"
   },
