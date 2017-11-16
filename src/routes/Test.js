@@ -23,7 +23,6 @@ class Test extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.wookieFormat !== this.state.wookieFormat) {
-      // console.log('needs to update');
       this.callSwapi(true); // flips to/from wookie version
     }
   }
@@ -40,17 +39,15 @@ class Test extends Component {
 
     if (changeCharacter) {
         randomNum = this.state.randomNum;
-        // console.log('state randomNum ', randomNum);
     }
 
     let query = `people/${randomNum}/`;
     if (this.state.wookieFormat) {
       query = query + "?format=wookiee";
     }
-    console.log('query string', query);
+    // console.log('query string', query);
     axios.get(`https://swapi.co/api/${query}`)
     .then((res) => {
-      // console.log(res.data);
       this.setState({ data: res.data, randomNum });
     })
     .catch(function (error) {
@@ -68,7 +65,6 @@ class Test extends Component {
   }
 
   onWookieeVersionClick() {
-    // TODO: fix this
     const currSetting = this.state.wookieFormat;
     this.setState({
       wookieFormat: !currSetting
@@ -94,13 +90,12 @@ class Test extends Component {
 
   render() {
     let character = ""; // this.state.data && (this.state.data.name || this.state.data.whrascwo);
+    const { data } = this.state;
 
-    if (this.state.data && this.state.data.name) {
-      character = this.state.data.name.toLowerCase().replace(" ", "_");
-    } else if (this.state.data && this.state.data.whrascwo) {
-      // console.log('character before: ', this.state.data.whrascwo);
-      character = this.mapWookieVersion(this.state.data.whrascwo);
-      // console.log('character now ', character);
+    if (data && data.name) {
+      character = data.name.toLowerCase().replace(" ", "_");
+    } else if (data && data.whrascwo) {
+      character = this.mapWookieVersion(data.whrascwo);
     }
 
     return (

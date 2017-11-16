@@ -29,7 +29,6 @@ const App = () => (
         <Route exact path='/error-boundary' component={ DemonstrateErrorBoundaries }/>
         <Route exact path='/custom-attributes' component={ CustomAttributes }/>
 
-
         <Route exact path='/about' component={ About }/>
         <Route exact path='/test' component={ Test }/>
 
