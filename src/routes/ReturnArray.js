@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import Spinner1 from '../components/Spinner1';
 import CharacterListItem from '../components/CharacterListItem';
 
@@ -40,11 +39,13 @@ class ReturnArray extends Component {
   render() {
     let { data, error } = this.state;
 
-    if (error) { console.error(error); }
+    if (error) {
+      console.error(error);
+    }
+
     // would use something other than the index for the key below if there was a better option
     return data && data.map((character, ind) => <CharacterListItem character={character} key={ind} /> )
       || <Spinner1 />
-
   }
 }
 

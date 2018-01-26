@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Image, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { List, Button, Segment } from 'semantic-ui-react';
 
 const Home = () => (
   <div id="home-div">
@@ -22,6 +23,31 @@ const Home = () => (
       <ListGroupItem><Link to="about">about</Link></ListGroupItem>
       <ListGroupItem><Link to="test">test route</Link></ListGroupItem>
     </ListGroup>
+
+
+    <Segment>
+    <List divided animated relaxed>
+      <List.Item>
+        <List.Content>
+          <List.Header>Portal</List.Header>
+          An excellent companion
+        </List.Content>
+      </List.Item>
+      <List.Item>
+        <List.Content>
+          <List.Header>Return Array</List.Header>
+          A poodle, its pretty basic
+        </List.Content>
+      </List.Item>
+      <List.Item>
+        <List.Content>
+          <List.Header>Cusotom Attributes</List.Header>
+          He's also a dog
+        </List.Content>
+      </List.Item>
+    </List>
+  </Segment>
+
   </div>
 );
 

@@ -54,10 +54,10 @@ const config = {
       },
       {
        test: /\.css$/,                                     //    /\.scss/
-       use: ['style-loader', 'css-loader']                 // , 'sass-loader'
+       use: ['style-loader', 'css-loader']                 // 'postcss-loader', , 'sass-loader' 'css-loader'
      },
      {
-       test: /\.(jpe?g|png|gif|svg)$/i,
+       test: /\.(jpe?g|png|gif|ttf|svg)$/i,
        loader: "url-loader?name=/public/images/[name].[ext]"
      }
 
