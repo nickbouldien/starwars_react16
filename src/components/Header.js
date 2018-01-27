@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, List, Button, Segment } from 'semantic-ui-react';
+import { Menu, List, Button, Segment, Icon } from 'semantic-ui-react';
 
 const Header = () => (
   <Menu inverted>
@@ -18,10 +18,12 @@ const Header = () => (
     />
     <Menu.Item
       floated={"right"}
-      name={'Github link'} // could add github icon
+      name={'Github link'}
       as={'a'}
       href={"https://www.github.com/nickbouldien" } // TODO: make link to actual repo
-    />
+    >
+      <Icon name="github" size="large" />
+    </Menu.Item>
   </Menu>
 );
 

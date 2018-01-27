@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Icon } from 'semantic-ui-react';
 
 const About = () => (
   <div id="about-div">
@@ -7,7 +8,7 @@ const About = () => (
     <div>
       <p>- <a href="https://github.com/facebook/react">React 16</a></p>
       <p>- <a href="https://webpack.github.io/">Webpack 3</a> (too much fun to setup...)</p>
-      <p>- <a href="https://react-bootstrap.github.io/">React Bootstrap</a> (quick styling)</p>
+      <p>- <a href="https://react.semantic-ui.com/introduction">Semantic UI React</a></p>
     </div>
 
     <p>
@@ -35,7 +36,6 @@ const About = () => (
 
     </div>
 
-
     <div>
       Resources:
       <pre><code>
@@ -51,10 +51,11 @@ const About = () => (
       </code></pre>
     </div>
 
-
+    <Button color='linkedin' as='a' href='https://www.linkedin.com/in/nickbouldien/' target="_blank" >
+      <Icon name='linkedin' /> LinkedIn
+    </Button>
 
   </div>
 );
-
 
 export default About;
