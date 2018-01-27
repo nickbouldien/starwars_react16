@@ -20,7 +20,7 @@ const Header = () => (
       floated={"right"}
       name={'Github link'}
       as={'a'}
-      href={"https://www.github.com/nickbouldien" } // TODO: make link to actual repo
+      href={"https://www.github.com/nickbouldien" } // TODO: make link to actual repo, open in new tab
     >
       <Icon name="github" size="large" />
     </Menu.Item>
