@@ -49,7 +49,7 @@ class ProblematicComponent extends Component {
         <Segment>
           <Header as={"h5"}>
             click the UHRGUARGUURGUURGUHUUUGUR (button) below (Chewie would understand 
-            <a href="https://scratch.mit.edu/projects/63879474/" target="_blank">Translator</a>)
+            <a href="https://scratch.mit.edu/projects/63879474/" target="_blank" rel="noopener"> Translator</a>)
           </Header>
           <Button onClick={this.handleClick}>UHRGUARGUURGUURGUHUUUGUR</Button>
         </Segment>

@@ -1,19 +1,46 @@
 import React from 'react';
-import { Button, Icon } from 'semantic-ui-react';
+import { Container, Header, Button, List, Icon } from 'semantic-ui-react';
 
 const About = () => (
-  <div id="about-div">
-    <h1>About this project:</h1>
-    <h3>Tech used:</h3>
-    <div>
-      <p>- <a href="https://github.com/facebook/react">React 16</a></p>
-      <p>- <a href="https://webpack.github.io/">Webpack 3</a> (too much fun to setup...)</p>
-      <p>- <a href="https://react.semantic-ui.com/introduction">Semantic UI React</a></p>
-    </div>
+  <Container>
+
+    <Header as='h1'>About this project:</Header>
+    <Header as='h3'>Tech used:</Header>
+
+    <List relaxed bulleted={true} animated>
+
+      <List.Item>
+        <List.Content>
+          <List.Description as='a' href="https://github.com/facebook/react">React 16</List.Description>
+        </List.Content>
+      </List.Item>
+
+      <List.Item>
+        <List.Content>
+          <List.Description as='a' href="https://webpack.github.io/">Webpack 3</List.Description>
+        </List.Content>
+      </List.Item>
+
+      <List.Item>
+        <List.Content>
+          <List.Description as='a' href="https://react.semantic-ui.com/introduction">Semantic UI React</List.Description>
+        </List.Content>
+      </List.Item>
+
+      {/* <List.Item>
+        <List.Icon name='github' size='large' verticalAlign='middle' />
+        <List.Content>
+          <List.Header as='a'>Semantic-Org/Semantic-UI</List.Header>
+          <List.Description as='a'>Updated 10 mins ago</List.Description>
+        </List.Content>
+      </List.Item> */}
+
+    </List>
+
 
     <p>
       Props to <a href="https://swapi.co/">swapi.co <span>(Star Wars API)</span></a> for the awesome (free!) api to mess around with.
-      (I'll be sure to donate some money to their project when I get a job...)
+      Be sure to suport their project
     </p>
 
     <p>
@@ -28,7 +55,6 @@ const About = () => (
       On the docket:
 
         use async/await for axios fetches
-        use eslint
         use flow types
         better styling
         good way to send/use styles with portals?
@@ -36,7 +62,7 @@ const About = () => (
 
     </div>
 
-    <div>
+    <Container>
       Resources:
       <pre><code>
         // https://reactjs.org/docs/portals.html
@@ -49,13 +75,13 @@ const About = () => (
         // https://webpack.js.org/
         // https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source
       </code></pre>
-    </div>
+    </Container>
 
     <Button color='linkedin' as='a' href='https://www.linkedin.com/in/nickbouldien/' target="_blank" >
       <Icon name='linkedin' /> LinkedIn
     </Button>
 
-  </div>
+  </Container>
 );
 
 export default About;
