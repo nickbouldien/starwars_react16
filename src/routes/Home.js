@@ -7,11 +7,11 @@ const Home = () => (
     <Header as={"h1"}>
       Welcome, young <a href="http://starwars.wikia.com/wiki/Padawan" target={"_blank"} rel={"noopener"}>padawans</a>
     </Header>
-    <div>
-      <h3>This is just a small "project" to explore some of the new features of <a href="https://reactjs.org/blog/2017/09/26/react-v16.0.html" target="_blank"> React 16</a>,
-       (with a star wars theme, of course)
-     </h3>
-    </div>
+
+    <Header as={'h3'}>
+      This is just a small "project" to explore some of the new features of <a href="https://reactjs.org/blog/2017/09/26/react-v16.0.html" target="_blank"> React 16</a>, 
+      (with a star wars theme, of course)
+    </Header>
 
     <Header as={"h3"}>Links to the routes: </Header>
 

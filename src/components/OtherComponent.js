@@ -1,14 +1,14 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
+import { Image, Segment, Header, Divider } from 'semantic-ui-react';
 import RenderText from './RenderText';
 
 const OtherComponent = (props) => (
-  <div>
-    <h3>{props.title}</h3>
-    <Image src={props.imgSource} alt="star wars gif"/>
-    <br />
+  <Segment>
+    <Header as="h3">{props.title}</Header>
+    <Image src={props.imgSource} alt={"star wars gif"} />
+    <Divider />
     <RenderText straightText="yessir" />
-  </div>
+  </Segment>
 );
 
 export default OtherComponent;

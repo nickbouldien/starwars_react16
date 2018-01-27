@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Header, Segment, Button } from 'semantic-ui-react';
 
 class ProblematicComponent extends Component {
   constructor(props) {
@@ -36,18 +37,24 @@ class ProblematicComponent extends Component {
       throw new Error('ProblemComponent crashed!');
     }
 
-    // hard to read below... TODO: fix, nb??!
-    return res && (res.name && res.population) && (
-      <div>
-        <h3>{res.name}</h3>
-        <p>Population: {res.population}</p>
-      </div>
-    ) || (
-      <div>
-        <h5>click the UHRGUARGUURGUURGUHUUUGUR (button) below (Chewie would understand <a href="https://scratch.mit.edu/projects/63879474/" target="_blank">Translator</a>)</h5>
-        <button onClick={this.handleClick}>UHRGUARGUURGUURGUHUUUGUR</button>
-      </div>
-    )
+    if (res && (res.name && res.population)) {
+      return (
+        <Segment>
+          <Header as="h3">{res.name}</Header>
+          <p>Population: {res.population}</p>
+        </Segment>
+      );
+    } else {
+      return (
+        <Segment>
+          <Header as={"h5"}>
+            click the UHRGUARGUURGUURGUHUUUGUR (button) below (Chewie would understand 
+            <a href="https://scratch.mit.edu/projects/63879474/" target="_blank">Translator</a>)
+          </Header>
+          <Button onClick={this.handleClick}>UHRGUARGUURGUURGUHUUUGUR</Button>
+        </Segment>
+      );
+    }
   }
 }
 

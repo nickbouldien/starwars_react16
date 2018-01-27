@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Header, Container } from 'semantic-ui-react';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -18,28 +19,19 @@ class ErrorBoundary extends Component {
 
   render() {
     const { error, errorInfo } = this.state;
-    // console.log(this.state);
     if (error) {
-      // case:
-      //   error === "Error1"
-      //     return <h1>Error 1</h1>
-      //   error === "Error2"
-      //     return <h1>Error 2</h1>
-      //   default:
-      //     return <h1>Default</h1>
-      return (
-        <div>
-          <h3>Something went wrong (on purpose).</h3>
+      return (  
+        <Container>
+          <Header as='h3'>Something went wrong (on purpose).</Header>
           <details style={{ whiteSpace: 'pre-wrap' }}>
-            <a href="https://codepen.io/gaearon/pen/wqvxGa?editors=0010" target="_blank" >stolen from Dan Abramov's codepen</a>
+            <a href={"https://codepen.io/gaearon/pen/wqvxGa?editors=0010"} target={"_blank"} >stolen from Dan Abramov's codepen</a>
             <br />
             {error && error.toString()}
             <br />
             {errorInfo.componentStack}
           </details>
            {/* https://media.giphy.com/media/gOSSh0r3Wf0yY/giphy.gif */}
-        </div>
-
+        </Container>
         // curious to see how people use ErrorBoundaries in production (have multiple for different types of errors?
         // have a switch or something that lets you render the wanted backup UI depending on the error?)
 
