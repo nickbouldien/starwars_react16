@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import Spinner1 from '../components/Spinner1';
+import CharacterList from '../routes/CharacterList';
 import CharacterListItem from '../components/CharacterListItem';
 
 class ReturnArray extends Component {
@@ -17,7 +17,7 @@ class ReturnArray extends Component {
   componentDidMount() {
     const apiCalls = [];
 
-    for (let i = 1; i < 5; i++) {  // (swapi starts at 1 (Luke))
+    for (let i = 1; i < 5; i++) {  // swapi starts at 1 (Luke)
       apiCalls.push(axios.get(`https://swapi.co/api/people/${i}/`));
     }
 
@@ -38,13 +38,18 @@ class ReturnArray extends Component {
   }
 
   render() {
-    let { data, error } = this.state;
+    const { data, error, fetching} = this.state;
 
-    if (error) { console.error(error); }
-    // would use something other than the index for the key below if there was a better option
-    return data && data.map((character, ind) => <CharacterListItem character={character} key={ind} /> )
-      || <Spinner1 />
+    if (error) {
+      // TODO: do better job displaying this error
+      console.error(error);
+      return <pre><code>Error: {error} </code></pre>;
+    }
 
+    if (fetching) { return <Spinner1 />; }
+
+    return data && <CharacterList data={data} />; //) || <Spinner1 />;
+      
   }
 }
 

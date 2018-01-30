@@ -1,19 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Menu, List, Button, Segment, Icon } from 'semantic-ui-react';
 
 const Header = () => (
-  <Navbar inverse>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <Link to="/">StarWars_React16</Link>
-      </Navbar.Brand>
-    </Navbar.Header>
-    <Nav pullRight>
-      <NavItem eventKey={1} href="/about">About</NavItem>
-      <NavItem eventKey={2} href="#">GitHub</NavItem>
-    </Nav>
-  </Navbar>
+  <Menu inverted>
+    <Menu.Item
+      header
+      name={'React 16 SW'}
+      as={Link}
+      to={"/"}
+    />
+    <Menu.Item
+      name={'about'}
+      // active={activeItem === 'about'}
+      as={Link}
+      to={"/about"}
+    />
+    <Menu.Item
+      floated={"right"}
+      name={'Github link'}
+      as={'a'}
+      href={"https://www.github.com/nickbouldien" } // TODO: make link to actual repo, open in new tab
+    >
+      <Icon name="github" size="large" />
+    </Menu.Item>
+  </Menu>
 );
 
 export default Header;
