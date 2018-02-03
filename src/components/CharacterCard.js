@@ -2,7 +2,13 @@ import React from 'react';
 import { Card, Icon, Image, Menu, List, Button, Segment } from 'semantic-ui-react';
 
 const HomeworldLink = ({ character }) => (
-  <Button color={'linkedin'} as={'a'} href={`${character.homeworld}`} target={"_blank"} rel={"noopener"} >
+  <Button
+    color={'linkedin'}
+    as={'a'}
+    href={`${character.homeworld}`}
+    target={"_blank"}
+    rel={"noopener"}
+  >
     Swapi Link to Home World
   </Button>
 );

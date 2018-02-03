@@ -15,7 +15,6 @@ class ProblematicComponent extends Component {
   handleClick() {
     axios.get(this.props.url)
       .then((results) => {
-        console.log('call results: ', results);
         this.setState({
           res: results.data,
           fetching: false
@@ -31,7 +30,6 @@ class ProblematicComponent extends Component {
 
   render() {
     const { res } = this.state;
-    console.log('ProblemComponent props', this.state );
 
     if (this.state.error) {
       throw new Error('ProblemComponent crashed!');

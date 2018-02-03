@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Container, Header } from 'semantic-ui-react';
 
 const weapons = {
   blaster: true,
@@ -8,10 +9,8 @@ const weapons = {
 }
 
 const CustomAttributes = () => (
-  <div id="customAttributes-div">
-    <h1>Custom Attributes:</h1>
-
-    <Link to="/">home</Link>
+  <Container id="customAttributes-div">
+    <Header as="h1">Custom Attributes:</Header>
 
     <h2>Inspect the elements with the browser dev tools to see the custom attributes on the divs</h2>
 
@@ -49,7 +48,7 @@ const CustomAttributes = () => (
     {/*  put image of the results from the console */}
     <img src="" alt="" />
 
-  </div>
+  </Container>
 );
 
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Image } from 'react-bootstrap';
+import { Button, Image, Header, Loader, Container } from 'semantic-ui-react';
+// import { Image } from 'react-bootstrap';
 import Spinner1 from '../components/Spinner1';
 
 class Test extends Component {
@@ -45,7 +46,6 @@ class Test extends Component {
     if (this.state.wookieFormat) {
       query = query + "?format=wookiee";
     }
-    // console.log('query string', query);
     axios.get(`https://swapi.co/api/${query}`)
     .then((res) => {
       this.setState({ data: res.data, randomNum });
@@ -56,7 +56,6 @@ class Test extends Component {
     // below is prepping for async/await
     // try {
     //   const results = await axios.get(`https://swapi.co/api/${this.state.searchTerm}`)
-    //   console.log('The fetch Results are: ', results);
     // } catch (err) {
     //   console.error("Error fetching: ", err);
     // }
@@ -87,7 +86,6 @@ class Test extends Component {
     }
   }
 
-
   render() {
     let character = ""; // this.state.data && (this.state.data.name || this.state.data.whrascwo);
     const { data } = this.state;
@@ -99,25 +97,31 @@ class Test extends Component {
     }
 
     return (
-      <div id="test-div">
-        <h1>Test: (with characters 1-4)</h1>
+      <Container id="test-div">
+        <Header as="h2">Test: (with characters 1-4)</Header>
 
-        <button onClick={this.refresh}>Call Swapi again</button>
+      { 
+        this.state.data && character ? (
+          <div>
+            <Image
+              src={`/images/${character}.png`}
+              alt={`Image for ${character}`} 
+              bordered={true}
+              size={"large"}   
+            />
 
-        <button onClick={this.onWookieeVersionClick}>Change to Wookiee version</button>
+            <br />
+            
+            <Button onClick={this.onWookieeVersionClick}>Change to Wookiee version</Button>
 
-      { this.state.data && character && (
-        <div>
-          <Image src={`/images/${character}.png`} responsive thumbnail alt={`Image for ${character}`} />
+            <Header as="h4">Response from swapi for character {this.state.randomNum}:</Header>
 
-          <h3>Response from swapi for character {this.state.randomNum}:</h3>
-          <pre><code>{JSON.stringify(this.state.data, null, 4)}</code></pre>
+            <pre><code>{JSON.stringify(this.state.data, null, 4)}</code></pre>
 
-        </div>
-      ) || <Spinner1 />
+          </div> ) : <Loader />
       }
 
-      </div>
+      </Container>
     )
   }
 }

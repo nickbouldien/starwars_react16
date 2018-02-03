@@ -10,21 +10,25 @@ const Header = () => (
       as={Link}
       to={"/"}
     />
-    <Menu.Item
-      name={'about'}
-      // active={activeItem === 'about'}
-      as={Link}
-      to={"/about"}
-    />
-    <Menu.Item
-      floated={"right"}
-      name={'Github link'}
-      as={'a'}
-      href={"https://www.github.com/nickbouldien" } // TODO: make link to actual repo, open in new tab
-    >
-      <Icon name="github" size="large" />
-    </Menu.Item>
+    <Menu.Menu position={"right"}>
+      <Menu.Item
+        name={'about'}
+        // active={activeItem === 'about'}
+        as={Link}
+        to={"/about"}
+      />
+      <Menu.Item
+        name={'Github link'}
+        as={'a'}
+        href={"https://www.github.com/nickbouldien" } // TODO: make link to actual repo
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <Icon name="github" size="large" />
+      </Menu.Item>
+    </Menu.Menu>
   </Menu>
 );
 
 export default Header;
+

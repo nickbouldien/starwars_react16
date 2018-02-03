@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Loader } from 'semantic-ui-react';
 import Spinner1 from '../components/Spinner1';
 import CharacterList from '../routes/CharacterList';
 import CharacterListItem from '../components/CharacterListItem';
@@ -46,9 +47,14 @@ class ReturnArray extends Component {
       return <pre><code>Error: {error} </code></pre>;
     }
 
-    if (fetching) { return <Spinner1 />; }
+    if (fetching) { return <Loader />; }
 
-    return data && <CharacterList data={data} />; //) || <Spinner1 />;
+    return data && (
+    
+      // <Grid >
+        <CharacterList data={data} />
+      // </Grid>
+    )
       
   }
 }

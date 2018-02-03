@@ -22,12 +22,7 @@ class PortalComponent extends PureComponent {
   }
 
   componentWillUnmount() {
-    // const yup = this.externalWindow.document.getElementById("portal-div");
-    // console.log('yup is: ', yup);
-    // yup.remove();
-    // modalRoot.removeChild(this.el);
     this.externalWindow.close();
-
   }
 }
 

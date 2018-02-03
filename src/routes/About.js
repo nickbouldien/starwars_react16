@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, Button, List, Icon } from 'semantic-ui-react';
+import { Container, Divider, Header, Button, List, Icon } from 'semantic-ui-react';
 
 const About = () => (
   <Container>
@@ -11,19 +11,25 @@ const About = () => (
 
       <List.Item>
         <List.Content>
-          <List.Description as='a' href="https://github.com/facebook/react">React 16</List.Description>
+          <List.Description as='a' href="https://github.com/facebook/react" target="_blank" rel='noopener noreferrer' >React 16</List.Description>
         </List.Content>
       </List.Item>
 
       <List.Item>
         <List.Content>
-          <List.Description as='a' href="https://webpack.github.io/">Webpack 3</List.Description>
+          <List.Description as='a' href="https://webpack.github.io/" target="_blank" rel='noopener noreferrer' >Webpack 3</List.Description>
         </List.Content>
       </List.Item>
 
       <List.Item>
         <List.Content>
-          <List.Description as='a' href="https://react.semantic-ui.com/introduction">Semantic UI React</List.Description>
+          <List.Description as='a' href="https://react.semantic-ui.com/introduction" target="_blank" rel='noopener noreferrer' >Semantic UI React</List.Description>
+        </List.Content>
+      </List.Item>
+
+      <List.Item>
+        <List.Content>
+          <List.Description as='a' href="https://www.netlify.com/" target="_blank" rel='noopener noreferrer' >Netlify</List.Description>
         </List.Content>
       </List.Item>
 
@@ -37,9 +43,8 @@ const About = () => (
 
     </List>
 
-
     <p>
-      Props to <a href="https://swapi.co/">swapi.co <span>(Star Wars API)</span></a> for the awesome (free!) api to mess around with.
+      Props to <a href="https://swapi.co/" target="_blank" rel='noopener noreferrer'>swapi.co <span>(Star Wars API)</span></a> for the awesome (free!) api to mess around with.
       Be sure to suport their project
     </p>
 
@@ -51,34 +56,128 @@ const About = () => (
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Q0CbN8sfihY"
     frameBorder="0" allowFullScreen></iframe>
 
+    <Divider />
+
     <div>
-      On the docket:
+    
+      <Header as="h3">On the docket:</Header>
 
-        use async/await for axios fetches
-        use flow types
-        better styling
-        good way to send/use styles with portals?
-        add some kind of animation(s)
+      <List>
+        <List.Item>
+          <List.Content>
+            use async/await for axios fetches
+          </List.Content>
+        </List.Item>
 
+        <List.Item>
+          <List.Content>
+          use flow types
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+            better styling
+          </List.Content>
+        </List.Item>                
+
+        <List.Item>
+          <List.Content>
+            good way to send/use styles with portals?
+          </List.Content>
+        </List.Item>                
+
+        <List.Item>
+          <List.Content>
+            add some kind of animation(s)
+          </List.Content>
+        </List.Item>                
+        
+      </List>
     </div>
 
+    <Divider />
+
     <Container>
-      Resources:
-      <pre><code>
-        // https://reactjs.org/docs/portals.html
-        // https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202
-        // https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
-        // https://medium.com/ecmastack/what-you-need-to-know-about-react-16-a4e216522041
-        // https://codepen.io/gaearon/pen/wqvxGa?editors=0010
-        // https://blog.sentry.io/2017/09/28/react-16-error-boundaries
-        // https://hackernoon.com/error-boundaries-in-react-16-32fb8e185a3
-        // https://webpack.js.org/
-        // https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source
-      </code></pre>
+      <Header as="h3">Resources/Links:</Header>
+
+      <List>
+        <List.Item>
+          <List.Content>
+            <List.Description
+              as='a'
+              href="https://reactjs.org/docs/portals.html"
+              target="_blank"
+              rel='noopener noreferrer'>
+              react portals (reactjs.org)
+            </List.Description>
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+          <List.Description
+            as='a'
+            href="https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202"
+            target="_blank"
+            rel='noopener noreferrer'>
+              react portals (hackernoon)
+            </List.Description>          
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+          // https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
+          </List.Content>
+        </List.Item>                
+
+        <List.Item>
+          <List.Content>
+          // https://medium.com/ecmastack/what-you-need-to-know-about-react-16-a4e216522041
+          </List.Content>
+        </List.Item>                
+
+        <List.Item>
+          <List.Content>
+          // https://codepen.io/gaearon/pen/wqvxGa?editors=0010
+          </List.Content>
+        </List.Item>                
+
+        <List.Item>
+          <List.Content>
+          // https://blog.sentry.io/2017/09/28/react-16-error-boundaries
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+          // https://hackernoon.com/error-boundaries-in-react-16-32fb8e185a3
+          </List.Content>
+        </List.Item>                
+
+        <List.Item>
+          <List.Content>
+          // https://webpack.js.org/
+          </List.Content>
+        </List.Item>                
+
+        <List.Item>
+          <List.Content>
+          // https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source
+          </List.Content>
+        </List.Item>    
+
+      </List>
+
     </Container>
 
     <Button color='linkedin' as='a' href='https://www.linkedin.com/in/nickbouldien/' target="_blank" >
       <Icon name='linkedin' /> LinkedIn
+    </Button>
+
+    <Button color='github' as='a' href='https://github.com/nickbouldien' target="_blank" >
+      <Icon name='github' /> Github
     </Button>
 
   </Container>
