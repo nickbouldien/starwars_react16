@@ -49,13 +49,7 @@ class ReturnArray extends Component {
 
     if (fetching) { return <Loader />; }
 
-    return data && (
-    
-      // <Grid >
-        <CharacterList data={data} />
-      // </Grid>
-    )
-      
+    return data && <CharacterList data={data} />
   }
 }
 

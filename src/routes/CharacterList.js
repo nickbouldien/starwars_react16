@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'semantic-ui-react';
 import CharacterCard from '../components/CharacterCard';
 
 const CharacterList = ({ data }) => {
@@ -6,8 +7,8 @@ const CharacterList = ({ data }) => {
     return (
         data.map((character, ind) => (
             <CharacterCard
-               character={character}
-               key={ind}
+                character={character}
+                key={ind}
             />
         ))
     );
