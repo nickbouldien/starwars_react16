@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Loader } from 'semantic-ui-react';
+import { Loader, Container } from 'semantic-ui-react';
 import Spinner1 from '../components/Spinner1';
 import CharacterList from '../routes/CharacterList';
 import CharacterListItem from '../components/CharacterListItem';
@@ -49,7 +49,11 @@ class ReturnArray extends Component {
 
     if (fetching) { return <Loader />; }
 
-    return data && <CharacterList data={data} />
+    return data && (
+                    <Container textAlign={"center"}>
+                      <CharacterList data={data} />
+                    </Container>
+    )
   }
 }
 
