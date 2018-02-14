@@ -17,6 +17,11 @@ const Home = () => (
 
     <Segment>
 
+      <p>this is new content blabla</p>
+      <p>this is new content blabla</p>
+      <p>this is new content blabla</p>
+
+
       <List divided animated relaxed>
 
         <List.Item as={Link} to={"portal"}>
