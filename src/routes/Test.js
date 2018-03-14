@@ -100,23 +100,23 @@ class Test extends Component {
       <Container id="test-div">
         <Header as="h2">Test: (with characters 1-4)</Header>
 
-      { 
+      {
         this.state.data && character ? (
           <div>
             <Image
               src={`/images/${character}.png`}
-              alt={`Image for ${character}`} 
+              alt={`Image for ${character}`}
               bordered={true}
-              size={"large"}   
+              size={"large"}
             />
 
             <br />
-            
+
             <Button onClick={this.onWookieeVersionClick}>Change to Wookiee version</Button>
 
             <Header as="h4">Response from swapi for character {this.state.randomNum}:</Header>
 
-            <pre><code>{JSON.stringify(this.state.data, null, 4)}</code></pre>
+            <pre><code>{JSON.stringify(data, null, 4)}</code></pre>
 
           </div> ) : <Loader />
       }
