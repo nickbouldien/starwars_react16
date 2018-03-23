@@ -4,7 +4,7 @@ import AnotherFragment from '../components/AnotherFragment';
 const Frag = () => (
   <Fragment>
     Best Star Wars movie??
-    <AnotherFragment />
+    {/* <AnotherFragment /> */}
   </Fragment>
 );
 
