@@ -2,16 +2,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount, render, shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import Frag from '../routes/Frag';
-
-configure({ adapter: new Adapter() });
-
-global.expect = expect;
-
-global.mount = mount;
-global.render = render;
-global.shallow = shallow;
+import toJson from 'enzyme-to-json';
+import setup from './setup';
 
 test('sanity check', () => {
   expect(2 + 2).toBe(4);
