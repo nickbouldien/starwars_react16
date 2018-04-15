@@ -1,53 +1,27 @@
 // Frag.test.js
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount, render, shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { mount, shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+import { Link, MemoryRouter } from 'react-router-dom';
 import Header from '../components/Header';
+import setup from './setup';
 
-configure({ adapter: new Adapter() });
 
-global.expect = expect;
+describe('<Header /> component', () => {
+  it('renders (shallow) the Header component', () => {
+    const wrapper = shallow(<Header />);
+    // console.log('wrapper', toJson(wrapper.children()));
+    expect(wrapper.children().length).toBe(2);
+    // expect(wrapper.find('a').length).toBe(3);
+  });
 
-global.mount = mount;
-global.render = render;
-global.shallow = shallow;
+  test('Header matches snapshot', () => {
+    const component = mount(<MemoryRouter><Header /></MemoryRouter> );
+    console.log('link: ', toJson(component.find('a')));
+    expect(component.find('a').first().text()).toBe('React 16 SW');
 
-test('sanity check', () => {
-  expect(2 + 1).toBe(3);
+    // can't do the snapshot since they contain keys which change each time
+    // expect(toJson(component)).toMatchSnapshot();
+  });
 });
-
-// describe('Frag Component', () => {
-//   it('renders the Frag component', () => {
-//     const wrapper = shallow(<Header />);
-//     console.log('wrapper', wrapper);
-//     // expect(wrapper.children).to.have.length(1);
-//     expect(wrapper.children().text()).to.equal('Best Star Wars movie??');
-//   });
-// });
-
-// test('Frag renders correctly', () => {
-//   const component = renderer.create(
-//     <Header />
-//   );
-
-//   // expect(component.)
-
-
-//   let tree = component.toJSON();
-//   expect(tree).toMatchSnapshot();
-
-//   // manually trigger the callback
-//   // tree.props.onMouseEnter();
-//   // // re-rendering
-//   // tree = component.toJSON();
-//   // expect(tree).toMatchSnapshot();
-
-//   // // manually trigger the callback
-//   // tree.props.onMouseLeave();
-//   // // re-rendering
-//   // tree = component.toJSON();
-//   // expect(tree).toMatchSnapshot();
-  
-// });

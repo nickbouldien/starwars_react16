@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> component Header matches snapshot 1`] = `
+<MemoryRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "dfg9nt",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "dfg9nt",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Header>
+      <Menu
+        inverted={true}
+      >
+        <div
+          className="ui inverted menu"
+        >
+          <MenuItem
+            as={[Function]}
+            header={true}
+            name="React 16 SW"
+            to="/"
+          >
+            <Link
+              className="header item"
+              onClick={[Function]}
+              replace={false}
+              to="/"
+            >
+              <a
+                className="header item"
+                href="/"
+                onClick={[Function]}
+              >
+                React 16 SW
+              </a>
+            </Link>
+          </MenuItem>
+          <MenuMenu
+            position="right"
+          >
+            <div
+              className="right menu"
+            >
+              <MenuItem
+                as={[Function]}
+                name="about"
+                to="/about"
+              >
+                <Link
+                  className="item"
+                  onClick={[Function]}
+                  replace={false}
+                  to="/about"
+                >
+                  <a
+                    className="item"
+                    href="/about"
+                    onClick={[Function]}
+                  >
+                    About
+                  </a>
+                </Link>
+              </MenuItem>
+              <MenuItem
+                as="a"
+                href="https://www.github.com/nickbouldien"
+                name="Github link"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <a
+                  className="item"
+                  href="https://www.github.com/nickbouldien"
+                  onClick={[Function]}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon
+                    as="i"
+                    name="github"
+                    size="large"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="github large icon"
+                    />
+                  </Icon>
+                </a>
+              </MenuItem>
+            </div>
+          </MenuMenu>
+        </div>
+      </Menu>
+    </Header>
+  </Router>
+</MemoryRouter>
+`;
