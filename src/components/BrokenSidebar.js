@@ -10,7 +10,7 @@ class BrokenSidebar extends Component {
 
   handleClick() {
     this.setState(({counter}) => ({
-      counter: counter + 1
+      counter: counter + 1,
     }));
   }
 

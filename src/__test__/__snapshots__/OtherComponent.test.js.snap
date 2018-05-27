@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OtherComponent /> component OtherComponent matches snapshot 1`] = `
+<OtherComponent
+  imgSource="./img/cool_pic.png"
+  title="Cool title"
+>
+  <Segment>
+    <div
+      className="ui segment"
+    >
+      <Header
+        as="h3"
+      >
+        <h3
+          className="ui header"
+        >
+          Cool title
+        </h3>
+      </Header>
+      <Image
+        alt="star wars gif"
+        as="img"
+        src="./img/cool_pic.png"
+        ui={true}
+      >
+        <img
+          alt="star wars gif"
+          className="ui image"
+          src="./img/cool_pic.png"
+        />
+      </Image>
+      <Divider>
+        <div
+          className="ui divider"
+        />
+      </Divider>
+      <RenderText
+        straightText="yessir"
+      >
+        Not even the younglings survived (a component)
+      </RenderText>
+    </div>
+  </Segment>
+</OtherComponent>
+`;

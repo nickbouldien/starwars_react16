@@ -6,14 +6,14 @@ class ErrorBoundary extends Component {
     super(props);
       this.state = {
         error: null,
-        errorInfo: null
+        errorInfo: null,
       }
   }
 
   componentDidCatch(error, errorInfo) {
     this.setState({
       error: error,
-      errorInfo: errorInfo
+      errorInfo: errorInfo,
     });
   }
 
@@ -34,7 +34,6 @@ class ErrorBoundary extends Component {
         </Container>
         // curious to see how people use ErrorBoundaries in production (have multiple for different types of errors?
         // have a switch or something that lets you render the wanted backup UI depending on the error?)
-
       )
     }
     return this.props.children;

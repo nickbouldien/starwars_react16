@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RenderText = () => 'Not even the younglings survived (a component)';
+const RenderText = () => 'Not even the younglings survived (this component is just text)';
 // not sure how often I'd do this, but cool to have the option (especially for
 // just making something to test that a component is rendering)
 

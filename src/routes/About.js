@@ -33,14 +33,6 @@ const About = () => (
         </List.Content>
       </List.Item>
 
-      {/* <List.Item>
-        <List.Icon name='github' size='large' verticalAlign='middle' />
-        <List.Content>
-          <List.Header as='a'>Semantic-Org/Semantic-UI</List.Header>
-          <List.Description as='a'>Updated 10 mins ago</List.Description>
-        </List.Content>
-      </List.Item> */}
-
     </List>
 
     <p>
@@ -51,6 +43,7 @@ const About = () => (
     <p>
       This project inspired by multiple things:  I realized I hadn't looked into React 16 and its new features yet, so wanted to play around with it some.
       Also, wanted to practice with Webpack config, and I remembered that the new <a href="http://www.starwars.com/films/star-wars-episode-viii-the-last-jedi">Star Wars movie</a> was/is coming out soon (hence the theme)
+      EDIT: this was started in November of 2017
     </p>
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Q0CbN8sfihY"
@@ -63,6 +56,36 @@ const About = () => (
       <Header as="h3">On the docket:</Header>
 
       <List>
+        <List.Item>
+          <List.Content>
+            testing with jest/enzyme
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+            16.4 pointer events
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+            use the (new) context api
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+            use render props
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+            use new ref Apis
+          </List.Content>
+        </List.Item>
+
         <List.Item>
           <List.Content>
             use async/await for axios fetches
@@ -116,57 +139,88 @@ const About = () => (
 
         <List.Item>
           <List.Content>
-          <List.Description
-            as='a'
-            href="https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202"
-            target="_blank"
-            rel='noopener noreferrer'>
-              react portals (hackernoon)
-            </List.Description>          
+            <List.Description
+              as='a'
+              href="https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202"
+              target="_blank"
+              rel='noopener noreferrer'>
+                react portals (hackernoon)
+              </List.Description>          
           </List.Content>
         </List.Item>
 
         <List.Item>
           <List.Content>
-          // https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
-          </List.Content>
-        </List.Item>                
-
-        <List.Item>
-          <List.Content>
-          // https://medium.com/ecmastack/what-you-need-to-know-about-react-16-a4e216522041
-          </List.Content>
-        </List.Item>                
-
-        <List.Item>
-          <List.Content>
-          // https://codepen.io/gaearon/pen/wqvxGa?editors=0010
-          </List.Content>
-        </List.Item>                
-
-        <List.Item>
-          <List.Content>
-          // https://blog.sentry.io/2017/09/28/react-16-error-boundaries
+            <List.Description
+              as='a'
+              href="https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html"
+              target="_blank"
+              rel='noopener noreferrer'>
+                error handling
+              </List.Description>          
           </List.Content>
         </List.Item>
 
         <List.Item>
           <List.Content>
-          // https://hackernoon.com/error-boundaries-in-react-16-32fb8e185a3
+            <List.Description
+              as='a'
+              href="https://medium.com/ecmastack/what-you-need-to-know-about-react-16-a4e216522041"
+              target="_blank"
+              rel='noopener noreferrer'>
+                Medium blog post about React 16 by Alex Bachuk
+              </List.Description>          
           </List.Content>
-        </List.Item>                
+        </List.Item>
 
         <List.Item>
           <List.Content>
-          // https://webpack.js.org/
+            <List.Description
+              as='a'
+              href="https://codepen.io/gaearon/pen/wqvxGa?editors=0010"
+              target="_blank"
+              rel='noopener noreferrer'>
+                Error Boundary code pen by Dan Abramov
+              </List.Description>          
           </List.Content>
-        </List.Item>                
+        </List.Item>
 
         <List.Item>
           <List.Content>
-          // https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source
+            <List.Description
+              as='a'
+              href="https://blog.sentry.io/2017/09/28/react-16-error-boundaries"
+              target="_blank"
+              rel='noopener noreferrer'>
+                Error Boundary post by Max Bittker
+              </List.Description>          
           </List.Content>
-        </List.Item>    
+        </List.Item>
+
+
+        <List.Item>
+          <List.Content>
+            <List.Description
+              as='a'
+              href="https://hackernoon.com/error-boundaries-in-react-16-32fb8e185a3"
+              target="_blank"
+              rel='noopener noreferrer'>
+                Error Boundary post by Vivek Nayyar
+              </List.Description>          
+          </List.Content>
+        </List.Item>
+
+        <List.Item>
+          <List.Content>
+            <List.Description
+              as='a'
+              href="https://webpack.js.org/"
+              target="_blank"
+              rel='noopener noreferrer'>
+                webpack docs
+              </List.Description>          
+          </List.Content>
+        </List.Item>
 
       </List>
 
