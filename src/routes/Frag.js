@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import AnotherFragment from '../components/AnotherFragment';
 
 const Frag = () => (
-  <Fragment>
+  <>
     Best Star Wars movie??
     {/* <AnotherFragment /> */}
-  </Fragment>
+  </>
 );
 
 // const Frag = () => (

@@ -7,7 +7,7 @@ class ProblematicComponent extends Component {
     super(props);
     this.state = {
       res: null,
-      error: false
+      error: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -17,13 +17,13 @@ class ProblematicComponent extends Component {
       .then((results) => {
         this.setState({
           res: results.data,
-          fetching: false
+          fetching: false,
         });
       })
       .catch(err => {
         this.setState({
           error: `Error fetching data: ${err}`,
-          fetching: false
+          fetching: false,
         });
       });
   }

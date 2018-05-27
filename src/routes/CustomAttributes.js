@@ -5,7 +5,7 @@ import { Container, Header } from 'semantic-ui-react';
 const weapons = {
   blaster: true,
   bowcaster: true,
-  wampa: false
+  wampa: false,
 }
 
 const CustomAttributes = () => (

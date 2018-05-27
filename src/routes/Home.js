@@ -9,18 +9,17 @@ const Home = () => (
     </Header>
 
     <Header as={'h3'}>
-      This is just a small "project" to explore some of the new features of <a href="https://reactjs.org/blog/2017/09/26/react-v16.0.html" target="_blank"> React 16</a>, 
+      This is just a small "project" to explore some of the new features of <a href="https://reactjs.org/blog/2017/09/26/react-v16.0.html" target="_blank"> React 16 </a> 
       (with a star wars theme, of course)
     </Header>
+
+    <p>
+      (still WIP adding other new features in react 16+)
+    </p>
 
     <Header as={"h3"}>Links to the routes: </Header>
 
     <Segment>
-
-      <p>this is new content blabla</p>
-      <p>this is new content blabla</p>
-      <p>this is new content blabla</p>
-
 
       <List divided animated relaxed>
 
@@ -54,7 +53,7 @@ const Home = () => (
 
         <List.Item>
           <List.Content>
-            <List.Header as={Link} to={"test"}>Test Route</List.Header>
+            <List.Header as={Link} to={"test"} id="test-link">Test Route</List.Header>
             Test route to check response from <a href={"https://swapi.co/"} target={"_blank"} rel={"noopener"}>Swapi</a>
           </List.Content>
         </List.Item>
@@ -75,6 +74,5 @@ const Home = () => (
 
   </Container>
 );
-
 
 export default Home;

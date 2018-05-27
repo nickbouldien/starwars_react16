@@ -10,7 +10,7 @@ class Test extends Component {
     this.state = {
       wookieFormat: false,
       data: null,
-      randomNum: null
+      randomNum: null,
     }
     this.onWookieeVersionClick = this.onWookieeVersionClick.bind(this);
     this.refresh = this.refresh.bind(this);
@@ -53,20 +53,12 @@ class Test extends Component {
     .catch(function (error) {
       console.error(error);
     });
-    // below is prepping for async/await
-    // try {
-    //   const results = await axios.get(`https://swapi.co/api/${this.state.searchTerm}`)
-    // } catch (err) {
-    //   console.error("Error fetching: ", err);
-    // }
-
-    // https://medium.com/front-end-hacking/async-await-with-react-lifecycle-methods-802e7760d802
   }
 
   onWookieeVersionClick() {
     const currSetting = this.state.wookieFormat;
     this.setState({
-      wookieFormat: !currSetting
+      wookieFormat: !currSetting,
     });
   }
 
@@ -101,7 +93,7 @@ class Test extends Component {
         <Header as="h2">Test: (with characters 1-4)</Header>
 
       {
-        this.state.data && character ? (
+        data && character ? (
           <div>
             <Image
               src={`/images/${character}.png`}

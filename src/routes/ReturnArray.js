@@ -11,7 +11,7 @@ class ReturnArray extends Component {
     this.state = {
       data: null,
       error: null,
-      fetching: true
+      fetching: true,
     }
   }
 
@@ -27,13 +27,13 @@ class ReturnArray extends Component {
         const data = results.map(res => res.data);
         this.setState({
           data,
-          fetching: false
+          fetching: false,
         });
       })
       .catch(err => {
         this.setState({
           error: `Error fetching data: ${err}`,
-          fetching: false
+          fetching: false,
         });
       });
   }
@@ -43,17 +43,17 @@ class ReturnArray extends Component {
 
     if (error) {
       // TODO: do better job displaying this error
-      console.error(error);
+      // console.error(error);
       return <pre><code>Error: {error} </code></pre>;
     }
 
     if (fetching) { return <Loader />; }
 
-    return data && (
-                    <Container textAlign={"center"}>
-                      <CharacterList data={data} />
-                    </Container>
-    )
+    return data ? (
+      <Container textAlign={"center"}>
+        <CharacterList data={data} />
+      </Container>
+    ) : null
   }
 }
 
