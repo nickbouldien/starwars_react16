@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Loader, Container } from 'semantic-ui-react';
-import Spinner1 from '../components/Spinner1';
 import CharacterList from '../routes/CharacterList';
 import CharacterListItem from '../components/CharacterListItem';
+import Spinner1 from '../components/Spinner1';
 
 class ReturnArray extends Component {
   constructor() {
@@ -43,7 +43,6 @@ class ReturnArray extends Component {
 
     if (error) {
       // TODO: do better job displaying this error
-      // console.error(error);
       return <pre><code>Error: {error} </code></pre>;
     }
 
