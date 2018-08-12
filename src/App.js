@@ -1,21 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import ReactDOM from 'react-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
-import Home from './routes/Home';
 import About from './routes/About';
+import CustomAttributes from './routes/CustomAttributes';
+import DemonstrateErrorBoundaries from './routes/DemonstrateErrorBoundaries';
+import Home from './routes/Home';
 import Portal from './routes/Portal';
 import ReturnArray from './routes/ReturnArray';
-import DemonstrateErrorBoundaries from './routes/DemonstrateErrorBoundaries';
-import CustomAttributes from './routes/CustomAttributes';
-
 import Test from './routes/Test';
 
 import Header from './components/Header';
-// import NoMatch from './components/NoMatch';
 
 import './styles.css';
-
 
 const App = () => (
   <BrowserRouter>
@@ -40,10 +36,3 @@ const App = () => (
 );
 
 export default App;
-
-// if (module.hot) {
-//    module.hot.accept('./print.js', function() {
-//      console.log('Accepting the updated printMe module!');
-//      printMe();
-//    });
-//  }
