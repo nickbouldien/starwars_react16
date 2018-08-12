@@ -1,5 +1,5 @@
 import React from 'react';
-import AnotherFragment from '../components/AnotherFragment';
+// import AnotherFragment from '../components/AnotherFragment';
 
 const Frag = () => (
   <>
@@ -7,9 +7,5 @@ const Frag = () => (
     {/* <AnotherFragment /> */}
   </>
 );
-
-// const Frag = () => (
-//   "Best Star Wars movie??"
-// );
 
 export default Frag;

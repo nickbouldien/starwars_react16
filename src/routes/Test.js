@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Image, Header, Loader, Container } from 'semantic-ui-react';
-// import { Image } from 'react-bootstrap';
-import Spinner1 from '../components/Spinner1';
 
 class Test extends Component {
   constructor() {
@@ -33,13 +31,13 @@ class Test extends Component {
   }
 
   callSwapi(changeCharacter) {
-    // hardcoding max/min for now (future allow user to change (w/ slider?) ?) nb???
+    // hardcoding max/min for now (future allow user to change (w/ slider?) ?)
     let max = 4;
     let min = 1;
     let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
     if (changeCharacter) {
-        randomNum = this.state.randomNum;
+      randomNum = this.state.randomNum;
     }
 
     let query = `people/${randomNum}/`;
@@ -50,8 +48,10 @@ class Test extends Component {
     .then((res) => {
       this.setState({ data: res.data, randomNum });
     })
-    .catch(function (error) {
+    .catch((error) => {
+      // TODO: handle/display this error
       console.error(error);
+      return;
     });
   }
 
@@ -74,7 +74,6 @@ class Test extends Component {
       return "darth_vader";
     default:
       return "character_image";
-      break;
     }
   }
 
@@ -108,9 +107,14 @@ class Test extends Component {
 
             <Header as="h4">Response from swapi for character {this.state.randomNum}:</Header>
 
-            <pre><code>{JSON.stringify(data, null, 4)}</code></pre>
+            <pre>
+              <code>
+                { JSON.stringify(data, null, 4) }
+              </code>
+            </pre>
 
-          </div> ) : <Loader />
+          </div>
+        ) : <Loader />
       }
 
       </Container>

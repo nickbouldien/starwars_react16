@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Divider, Header, Button, List, Icon } from 'semantic-ui-react';
+import { Button, Container, Divider, Header, Icon, List } from 'semantic-ui-react';
 
 const About = () => (
   <Container>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Image, Menu, List, Button, Segment } from 'semantic-ui-react';
+import { Button, Card, Image } from 'semantic-ui-react';
 
 const HomeworldLink = ({ character }) => (
   <Button
@@ -13,6 +13,7 @@ const HomeworldLink = ({ character }) => (
   </Button>
 );
 
+// TODO: can make everything lowercase and do a match/replace on space => underscore
 const formatNameForImage = (name = "chewie") => {
   switch (name) {
     case "Lhuorwo Sorroohraanorworc":

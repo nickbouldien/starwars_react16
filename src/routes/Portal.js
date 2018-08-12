@@ -1,30 +1,22 @@
 import React, { PureComponent } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { Header, Grid, Image, Button, Container, Divider } from 'semantic-ui-react';
-// import { Image, Grid, Row, Col, Button } from 'react-bootstrap';
+import { Button, Container, Divider, Grid, Header, Image } from 'semantic-ui-react';
 import PortalComponent from '../components/PortalComponent';
 import chewieGif from '../../public/images/chewie1.gif';
 import vaderGif from '../../public/images/vaderGif.gif';
 
 class Portal extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showChewiePortal: false,
-      showDarthVaderPortal: false
-    };
-    this.toggleChewiePortal = this.toggleChewiePortal.bind(this);
-    this.toggleOtherPortal = this.toggleOtherPortal.bind(this);
+  state = {
+    showChewiePortal: false,
+    showDarthVaderPortal: false
   }
 
-  toggleChewiePortal() {
+  toggleChewiePortal = () => {
     this.setState({
       showChewiePortal: !this.state.showChewiePortal
     });
   }
 
-  toggleOtherPortal() {
+  toggleOtherPortal = () => {
     this.setState({
       showDarthVaderPortal: !this.state.showDarthVaderPortal
     });

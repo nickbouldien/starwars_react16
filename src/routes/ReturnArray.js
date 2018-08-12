@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Loader, Container } from 'semantic-ui-react';
 import CharacterList from '../routes/CharacterList';
-import CharacterListItem from '../components/CharacterListItem';
-import Spinner1 from '../components/Spinner1';
+import Error from '../components/Error';
 
 class ReturnArray extends Component {
   constructor() {
@@ -39,11 +38,10 @@ class ReturnArray extends Component {
   }
 
   render() {
-    const { data, error, fetching} = this.state;
+    const { data, error, fetching } = this.state;
 
     if (error) {
-      // TODO: do better job displaying this error
-      return <pre><code>Error: {error} </code></pre>;
+      return <Error message={error} />;
     }
 
     if (fetching) { return <Loader />; }

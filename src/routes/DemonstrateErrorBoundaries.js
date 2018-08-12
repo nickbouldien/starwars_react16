@@ -1,9 +1,9 @@
 import React from 'react';
 import { Header, Divider, Container } from 'semantic-ui-react';
-import ProblematicComponent from '../components/ProblematicComponent';
 import ErrorBoundary from '../components/ErrorBoundary';
 import OtherComponent from '../components/OtherComponent';
-import BrokenSidebar from '../components/BrokenSidebar';
+import ProblematicComponent from '../components/ProblematicComponent';
+// import BrokenSidebar from '../components/BrokenSidebar';
 import img1 from '../../public/images/may_the_force.gif';
 import img2 from '../../public/images/force_will_be_with_you_always.gif';
 

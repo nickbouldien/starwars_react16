@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Container, Header } from 'semantic-ui-react';
 
 const weapons = {
@@ -8,6 +7,7 @@ const weapons = {
   wampa: false,
 }
 
+// https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html
 const CustomAttributes = () => (
   <Container id="customAttributes-div">
     <Header as="h1">Custom Attributes:</Header>
@@ -51,21 +51,4 @@ const CustomAttributes = () => (
   </Container>
 );
 
-
 export default CustomAttributes;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html
