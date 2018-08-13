@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 const AnotherFragment = () => (
   <Fragment>
-    stuff aqui
+    cool stuff about starwars aqui in this react fragment
   </Fragment>
 );
 

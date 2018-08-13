@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
 import CharacterCard from '../components/CharacterCard';
 
 const CharacterList = ({ data }) => {

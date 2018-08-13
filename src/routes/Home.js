@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Header, Container, List, Button, Segment } from 'semantic-ui-react';
+import { Container, Header, List, Segment } from 'semantic-ui-react';
 
 const Home = () => (
   <Container>
@@ -68,7 +68,7 @@ const Home = () => (
       </p>
 
       <p>
-        Someday, the space below will be filled with something cool  
+        Someday, the space below will be filled with something cool (an animation??)
       </p>
     </Segment>
 
