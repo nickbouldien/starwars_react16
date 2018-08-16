@@ -79,7 +79,7 @@ class Test extends Component {
 
   render() {
     let character = ""; // this.state.data && (this.state.data.name || this.state.data.whrascwo);
-    const { data } = this.state;
+    const { data, wookieFormat } = this.state;
 
     if (data && data.name) {
       character = data.name.toLowerCase().replace(" ", "_");
@@ -103,7 +103,7 @@ class Test extends Component {
 
             <br />
 
-            <Button onClick={this.onWookieeVersionClick}>Change to Wookiee version</Button>
+            <Button onClick={this.onWookieeVersionClick}>Change { wookieFormat ? "from" : "to" } Wookiee version</Button>
 
             <Header as="h4">Response from swapi for character {this.state.randomNum}:</Header>
 

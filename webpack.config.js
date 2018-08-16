@@ -37,7 +37,14 @@ const config = {
         exclude: /node_modules/,
         loader: 'babel-loader', // https://github.com/babel/babel-loader
         query: {
-          presets: ['es2015']
+          presets: ['es2015'],
+          "plugins": [
+            "react-hot-loader/babel",
+            "babel-plugin-syntax-dynamic-import",
+            "babel-plugin-dynamic-import-webpack",
+            "babel-plugin-transform-decorators-legacy",
+            "babel-plugin-transform-class-properties"
+          ]
         },
       },
       {
